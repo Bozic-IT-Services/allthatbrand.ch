@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All That Brand</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <button id="theme-toggle" aria-label="Toggle Dark Mode">Dark</button>
+  <header class="header">
+    <div class="container">
+      <a href="#" class="logo"><img id="logo" src="images/allthatbrand-logo-dark.svg" alt="All That Brand"></a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <h1>Empower Your Business<br /> With Modern Web Solutions</h1>
+      <p>We create seamless, responsive, and stunning websites that convert visitors into customers. Let’s build something amazing together.</p>
+    </div>
+  </section>
+  <section id="services" class="section">
+    <div class="container">
+      <h2>What We Offer</h2>
+      <p>
+        From custom website development and e-commerce to SEO and digital marketing, we provide everything you need to grow online. Our team ensures that every solution is tailored to your unique goals, helping you reach and engage your audience effectively.
+      </p>
+      <div class="clients">
+        <h3>Our Clients</h3>
+        <div class="client-logos">
+          <img style="width: 100px; margin: 0 auto;" src="images/gcsl-logo.svg" alt="GCSL" />
+          <img src="images/seox-logo.svg" alt="Seox" />
+          <img src="images/spataro-media-logo.png" alt="Spataro Media" />
+          <img src="images/swiss-cvc-logo.svg" alt="Swiss CVC" />
+          <img src="images/kokeza-logo-black.png" alt="Kokeza Consulting" />
+          <img src="images/myssak_logo.png" alt="Myssak" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="quote">“Amazing experience! The team was professional and supportive.”</p>
+          <p class="author">– Anna K.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">“Top-notch service and stunning results. Highly recommended.”</p>
+          <p class="author">– Mark D.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">“They truly understand what it means to create user-focused websites.”</p>
+          <p class="author">– Julia W.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">“Our project came to life in a way we couldn’t imagine. Thank you!”</p>
+          <p class="author">– Tom S.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <div class="about-content">
+        <p>
+          We are a passionate team of developers, designers, and digital strategists<br /> dedicated to turning ideas into impactful products. 
+          Our mission is to help businesses grow by delivering clean, modern, <br />and user-centric websites and digital experiences.
+        </p>
+        <p>
+          With years of experience and a strong results-driven approach, <br />we’ve partnered with startups, small businesses, and large enterprises 
+          to craft meaningful digital solutions. We believe in transparency, <br />collaboration, and pushing creative boundaries.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <p><strong>Phone:</strong> <a href="tel:+1234567890">+41 76 530 45 52</a></p>
+        <p><strong>Email:</strong> <a href="mailto:hello@allthatbrand.com">hello@allthatbrand.com</a></p>
+        <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/aQ7Nrt3f3u7H96Zg9" target="_blank">Pfändwiesenstrasse 15, Zurich, Switzerland</a></p>
+        <p><strong>Social:</strong> 
+          <a href="https://instagram.com" target="_blank">Instagram</a> | 
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container footer-row">
+      <p class="footer-copy">© 2025 AllThatBrand. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const toggleBtn = document.getElementById('theme-toggle');
+    const logo = document.getElementById('logo');
+    const body = document.body;
+
+    // Hamburger toggle
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('show');
+    });
+
+    // Theme toggle logic
+    function updateLogo() {
+      const isDark = body.classList.contains('dark-mode');
+      logo.src = isDark
+        ? 'images/allthatbrand-logo-white.svg'
+        : 'images/allthatbrand-logo-dark.svg';
+      toggleBtn.textContent = isDark ? 'Light' : 'Dark';
+    }
+
+    function setInitialTheme() {
+      const isDark = localStorage.getItem('theme') === 'dark';
+      body.classList.toggle('dark-mode', isDark);
+      updateLogo();
+    }
+
+    // On button click
+    toggleBtn.addEventListener('click', () => {
+      const isDark = body.classList.toggle('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateLogo();
+    });
+
+    // On page load
+    window.addEventListener('DOMContentLoaded', setInitialTheme);
+
+  </script>
+</body>
+</html>
