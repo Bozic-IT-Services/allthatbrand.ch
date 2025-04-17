@@ -312,11 +312,6 @@ a {
   transform: scale(1.05);
 }
 
-.client-logos .decimal {
-  width: 110%;
-  height: 110%;
-}
-
 .client-logos .seox {
   width: 80%;
   height: 80%;
@@ -352,8 +347,8 @@ a {
   }
 
   .client-logos .schloss {
-    width: 80%;
-    height: 80%;
+    width: 75%;
+    height: 75%;
   }
 
   .client-logos .spataro {
