@@ -201,7 +201,7 @@ a {
   line-height: 1;
   margin-bottom: 20px;
   color: var(--text);
-  letter-spacing: -1px;
+  letter-spacing: -3px;
 }
 
 .hero p {
@@ -227,6 +227,7 @@ a {
   }
   .hero h1 {
     font-size: 2.25rem;
+    letter-spacing: -1px;
   }
   .hero p {
     font-size: 1rem;
