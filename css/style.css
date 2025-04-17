@@ -312,6 +312,11 @@ a {
   transform: scale(1.05);
 }
 
+.client-logos .decimal {
+  width: 110%;
+  height: 110%;
+}
+
 .client-logos .seox {
   width: 80%;
   height: 80%;
