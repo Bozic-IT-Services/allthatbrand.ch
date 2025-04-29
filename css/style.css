@@ -342,31 +342,37 @@ a {
   letter-spacing: -1px;
 }
 
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.carousel-button {
+  background-color: inherit;
+  border: none;
+  border-radius: 50%;
+  color: var(--text-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 20px;
+}
+
+.carousel-button:hover {
+  background-color: var(--scroll-color-hover);
+  transform: scale(1.1);
+}
+
 .testimonials-grid {
   display: inline-flex;
   gap: 24px;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: hidden;
   width: 100%;
-}
-
-.testimonials-grid::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-.testimonials-grid::-webkit-scrollbar-thumb {
-  background-color: var(--scroll-color);
-  border-radius: 4px;
-}
-
-.testimonials-grid::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scroll-color-hover);
-}
-
-.testimonials-grid::-webkit-scrollbar-track {
-  background-color: var(--divider);
-  border-radius: 4px;
 }
 
 .testimonial-card {
@@ -417,7 +423,7 @@ a {
     padding-top: 100px;
   }
 
-  .testimonial-card{
+  .testimonial-card {
     width: 100%;
   }
 }

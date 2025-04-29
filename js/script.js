@@ -25,6 +25,46 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("show");
   });
 
+  // Carousel Implementation
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const testimonials = document.querySelectorAll(".testimonial-card");
+  let mobile = window.matchMedia("(max-width: 768px)").matches;
+  let currentIndex = 0;
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
+    testimonials.forEach((testimonial) => {
+      let testimonialsGap = parseInt(getComputedStyle(document.querySelector(".testimonials-grid")).gap);
+      let testimonialWidth = parseInt(getComputedStyle(testimonial).width);
+      let translateValue = testimonialWidth + testimonialsGap;
+      testimonial.style.transform = `translateX(-${currentIndex * translateValue}px)`;
+    });
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex++;
+    mobile = window.matchMedia("(max-width: 768px)").matches;
+    if (mobile) {
+      if (currentIndex > 3) {
+        currentIndex = 3;
+      }
+    } else {
+      if (currentIndex > 1) {
+        currentIndex = 1;
+      }
+    }
+    testimonials.forEach((testimonial) => {
+      let testimonialsGap = parseInt(getComputedStyle(document.querySelector(".testimonials-grid")).gap);
+      let testimonialWidth = parseInt(getComputedStyle(testimonial).width);
+      let translateValue = testimonialWidth + testimonialsGap;
+      testimonial.style.transform = `translateX(-${currentIndex * translateValue}px)`;
+    });
+  });
+
   // Dark Mode Toggle
   const toggleBtn = document.getElementById("theme-toggle");
   const logo = document.getElementById("logo");
