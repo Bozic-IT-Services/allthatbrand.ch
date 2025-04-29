@@ -12,6 +12,11 @@
   --border-color: #ddd;
   --divider: #eee;
   --testimonial-bg: #f5f5f5;
+  --testimonial-bg-hover: #eaeaea;
+  --scroll-color: #adadad;
+  --scroll-color-hover: rgb(107, 107, 107);
+  --testimonial-company-name: rgb(0, 103, 221);
+  --testimonial-author-name: rgb(0, 145, 230);
 }
 
 body.dark-mode {
@@ -21,6 +26,11 @@ body.dark-mode {
   --border-color: #333;
   --divider: #333;
   --testimonial-bg: #1c1c1c;
+  --testimonial-bg-hover: #2a2a2a;
+  --scroll-color: rgb(107, 107, 107);
+  --scroll-color-hover: #adadad;
+  --testimonial-company-name: rgb(0, 90, 192);
+  --testimonial-author-name: rgb(0, 125, 197);
 }
 
 /* Base Styles */
@@ -195,6 +205,11 @@ a {
   }
 }
 
+/* Hero Heading Section */
+.hero-heading-span {
+  color: #ff540c;
+}
+
 /* Hero Section */
 .hero {
   padding: 80px 0 30px;
@@ -333,20 +348,46 @@ a {
 }
 
 .testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: inline-flex;
   gap: 24px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.testimonials-grid::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.testimonials-grid::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-color);
+  border-radius: 4px;
+}
+
+.testimonials-grid::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-color-hover);
+}
+
+.testimonials-grid::-webkit-scrollbar-track {
+  background-color: var(--divider);
+  border-radius: 4px;
 }
 
 .testimonial-card {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  flex: 0 0 auto;
+  width: calc(100% / 3 - 16px);
   background-color: var(--testimonial-bg);
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .testimonial-card:hover {
+  background-color: var(--testimonial-bg-hover);
   transform: translateY(-5px);
 }
 
@@ -362,6 +403,14 @@ a {
   font-size: 14px;
 }
 
+.testimonial-card .author .author-name {
+  color: var(--testimonial-author-name);
+}
+
+.testimonial-card .author .company-name {
+  color: var(--testimonial-company-name);
+}
+
 @media (max-width: 768px) {
   .testimonials h2 {
     font-size: 36px;
@@ -370,6 +419,10 @@ a {
   #testimonials {
     margin-top: 0;
     padding-top: 100px;
+  }
+
+  .testimonial-card{
+    width: 100%;
   }
 }
 
