@@ -12,11 +12,11 @@
   --border-color: #ddd;
   --divider: #eee;
   --testimonial-bg: #f5f5f5;
-  --testimonial-bg-hover: #eaeaea;
+  --testimonial-bg-hover: #ebebeb;
   --scroll-color: #adadad;
   --scroll-color-hover: rgb(107, 107, 107);
-  --testimonial-company-name: rgb(0, 103, 221);
-  --testimonial-author-name: rgb(0, 145, 230);
+  --testimonial-company-name: rgb(190, 60, 0);
+  --testimonial-author-name: rgb(199, 106, 0);
 }
 
 body.dark-mode {
@@ -29,8 +29,8 @@ body.dark-mode {
   --testimonial-bg-hover: #2a2a2a;
   --scroll-color: rgb(107, 107, 107);
   --scroll-color-hover: #adadad;
-  --testimonial-company-name: rgb(0, 90, 192);
-  --testimonial-author-name: rgb(0, 125, 197);
+  --testimonial-company-name: rgb(211, 67, 0);
+  --testimonial-author-name: rgb(228, 121, 0);
 }
 
 /* Base Styles */
@@ -203,11 +203,6 @@ a {
   .section p {
     margin-left: -20px;
   }
-}
-
-/* Hero Heading Section */
-.hero-heading-span {
-  color: #ff540c;
 }
 
 /* Hero Section */
@@ -394,13 +389,14 @@ a {
 .testimonial-card .quote {
   font-style: italic;
   font-weight: 400;
+  font-size: 18px;
   margin-bottom: 10px;
 }
 
 .testimonial-card .author {
   font-weight: 600;
   text-align: right;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .testimonial-card .author .author-name {
