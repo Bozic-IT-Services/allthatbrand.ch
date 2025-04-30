@@ -88,6 +88,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
@@ -212,42 +213,41 @@
 
       <!-- TESTIMONIALS SECTION -->
       <section id="testimonials" class="testimonials fade-in" aria-labelledby="testimonials-heading">
-        <div class="container">
+        <div class="container testimonials-container">
           <h2 id="testimonials-heading">What Our Clients Say</h2>
-          <div class="carousel">
-            <button class="carousel-button prev" aria-label="Previous testimonial" aria-controls="testimonials" aria-expanded="false"><</button>
-            <div class="testimonials-grid">
-              <div class="testimonial-card">
-                <p class="quote">
-                  “Aleksandar brings strong client relationship skills and demonstrates consistent account management on projects like KCM. He's proactive in communication, regularly checks workflows,
-                  and ensures smooth processes. His forecasting and planning have improved significantly, and his structured approach supports team efficiency and client satisfaction.”
-                </p>
-                <p class="author">– <span class="author-name">Cherif Zouein</span>, <span class="company-name">Decimal LLC</span></p>
-              </div>
-              <div class="testimonial-card">
-                <p class="quote">
-                  “In his function as Co-CTO and member of the extended management team, Aleksandar repeatedly contributed valuable ideas in addition to profound technological know-how and helped
-                  determine the business strategy of our company.”
-                </p>
-                <p class="author">– <span class="author-name">Daniel Capaul-Zoppi</span>, <span class="company-name">Computer Rock AG</span></p>
-              </div>
-              <div class="testimonial-card">
-                <p class="quote">
-                  “I had the privilege of working with Alex for almost five years. Be it creating new ideas, putting them into practice or scaling them up, with Alex we had an extremely competent
-                  partner at our side in all matters.”
-                </p>
-                <p class="author">– <span class="author-name">Florian Walther</span>, <span class="company-name">GVB</span></p>
-              </div>
-              <div class="testimonial-card">
-                <p class="quote">
-                  “I’ve been working with Alex and his team for two years now and I’m completely satisfied. They built the website for Myssak Aesthetic from the ground up and perfectly captured the
-                  look and feel I had envisioned—elegant, modern, and professional. What I especially appreciate is their reliability, fast communication, and ongoing support in day-to-day
-                  operations.”
-                </p>
-                <p class="author">– <span class="author-name">Irina Myssak</span>, <span class="company-name">Myssak Aesthetic</span></p>
-              </div>
+          <div class="testimonials-carousel">
+            <div class="testimonial-card">
+              <img src="images/decimal-logo-cropped.svg" class="decimal" alt="Decimal Studios Logo" />
+              <p class="author"><span class="author-name">Cherif Zouein</span>, <a href="https://decimalstudios.com/" target="_blank" class="company-name">Decimal LLC</a></p>
+              <p class="quote">
+                “Aleksandar brings strong client relationship skills and demonstrates consistent account management on projects like KCM. He's proactive in communication, regularly checks workflows,
+                and ensures smooth processes. His forecasting and planning have improved significantly, and his structured approach supports team efficiency and client satisfaction.”
+              </p>
             </div>
-            <button class="carousel-button next" aria-label="Next testimonial" aria-controls="testimonials" aria-expanded="false">></button>
+            <div class="testimonial-card">
+              <img src="images/computer-rock-logo.webp" class="computer-rock" alt="Computer Rock Logo" />
+              <p class="author"><span class="author-name">Daniel Capaul-Zoppi</span>, <a href="https://computerrock.com/" target="_blank" class="company-name">Computer Rock AG</a></p>
+              <p class="quote">
+                “In his function as Co-CTO and member of the extended management team, Aleksandar repeatedly contributed valuable ideas in addition to profound technological know-how and helped
+                determine the business strategy of our company.”
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <img src="images/gvb-logo.svg" class="gvb" style="margin-bottom: 10%; margin-top: 20%" alt="GVB Logo" />
+              <p class="author"><span class="author-name">Florian Walther</span>, <a href="https://gvb.ch/" target="_blank" class="company-name">GVB</a></p>
+              <p class="quote">
+                “I had the privilege of working with Alex for almost five years. Be it creating new ideas, putting them into practice or scaling them up, with Alex we had an extremely competent
+                partner at our side in all matters.”
+              </p>
+            </div>
+            <div class="testimonial-card">
+              <img src="images/myssak-aesthetics-logo-dark-cropped.svg" class="myssak" alt="GVB Logo" />
+              <p class="author"><span class="author-name">Irina Myssak</span>, <a href="https://www.myssakaesthetics.com/" target="_blank" class="company-name">Myssak Aesthetic</a></p>
+              <p class="quote">
+                “I’ve been working with Alex and his team for two years now and I’m completely satisfied. They built the website for Myssak Aesthetic from the ground up and perfectly captured the look
+                and feel I had envisioned—elegant, modern, and professional. What I especially appreciate is their reliability, fast communication, and ongoing support in day-to-day operations.”
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -314,6 +314,9 @@
         </div>
       </div>
     </footer>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

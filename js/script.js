@@ -26,42 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Carousel Implementation
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-  const testimonials = document.querySelectorAll(".testimonial-card");
-  let mobile = window.matchMedia("(max-width: 768px)").matches;
-  let currentIndex = 0;
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = 0;
-    }
-    testimonials.forEach((testimonial) => {
-      let testimonialsGap = parseInt(getComputedStyle(document.querySelector(".testimonials-grid")).gap);
-      let testimonialWidth = parseInt(getComputedStyle(testimonial).width);
-      let translateValue = testimonialWidth + testimonialsGap;
-      testimonial.style.transform = `translateX(-${currentIndex * translateValue}px)`;
-    });
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex++;
-    mobile = window.matchMedia("(max-width: 768px)").matches;
-    if (mobile) {
-      if (currentIndex > 3) {
-        currentIndex = 3;
-      }
-    } else {
-      if (currentIndex > 1) {
-        currentIndex = 1;
-      }
-    }
-    testimonials.forEach((testimonial) => {
-      let testimonialsGap = parseInt(getComputedStyle(document.querySelector(".testimonials-grid")).gap);
-      let testimonialWidth = parseInt(getComputedStyle(testimonial).width);
-      let translateValue = testimonialWidth + testimonialsGap;
-      testimonial.style.transform = `translateX(-${currentIndex * translateValue}px)`;
+  $(document).ready(function () {
+    $(".testimonials-carousel").slick({
+      slidesToShow: 3,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      dots: true,
+      appendDots: $(".testimonials-container"),
+      arrows: false,
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     });
   });
 
@@ -70,6 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.getElementById("logo");
   const clientLogos = document.querySelectorAll(".client-logos .logo");
   const seoX = document.querySelectorAll(".client-logos .logo")[4];
+  const decimal = document.querySelectorAll(".decimal");
+  const computerRock = document.querySelectorAll(".computer-rock");
+  const myssak = document.querySelectorAll(".myssak");
+  const gvb = document.querySelectorAll(".gvb");
   const body = document.body;
 
   function updateLogo() {
@@ -78,10 +64,34 @@ document.addEventListener("DOMContentLoaded", () => {
       clientLogos[0].style.filter = "invert(1)";
       clientLogos[2].style.filter = "invert(1)";
       seoX.src = "images/seox-logo-inverted.svg";
+      decimal.forEach((el) => {
+        el.style.filter = "invert(1)";
+      });
+      computerRock.forEach((el) => {
+        el.style.filter = "invert(1)";
+      });
+      myssak.forEach((el) => {
+        el.style.filter = "invert(1)";
+      });
+      gvb.forEach((el) => {
+        el.src = "images/gvb-logo-inverted.svg";
+      });
     } else {
       clientLogos[0].style.filter = "invert(0)";
       clientLogos[2].style.filter = "invert(0)";
       seoX.src = "images/seox-logo-dark.svg";
+      decimal.forEach((el) => {
+        el.style.filter = "invert(0)";
+      });
+      computerRock.forEach((el) => {
+        el.style.filter = "invert(0)";
+      });
+      myssak.forEach((el) => {
+        el.style.filter = "invert(0)";
+      });
+      gvb.forEach((el) => {
+        el.src = "images/gvb-logo.svg";
+      });
     }
     logo.src = isDark ? "images/allthatbrand-logo-white.svg" : "images/allthatbrand-logo-dark.svg";
     toggleBtn.textContent = isDark ? "Light" : "Dark";
