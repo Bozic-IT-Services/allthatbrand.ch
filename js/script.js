@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     $(".testimonials-carousel").slick({
       slidesToShow: 3,
       autoplay: true,
-      autoplaySpeed: 7000,
+      autoplaySpeed: 4000,
+      pauseOnHover: true,
       dots: true,
       appendDots: $(".testimonials-container"),
       arrows: false,
