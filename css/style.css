@@ -373,23 +373,18 @@ a {
   background: var(--dot-color-active);
 }
 
+.testimonials-carousel .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
 .testimonial-card {
+  background-color: var(--testimonial-bg);
   margin-left: 24px;
   margin-right: 24px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  flex: 0 0 auto;
-  width: calc(100% / 3 - 16px);
-  background-color: var(--testimonial-bg);
   padding: 20px;
   border-radius: 12px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.testimonial-card img {
-  width: 50%;
-  margin: auto;
 }
 
 .testimonial-card:hover {
@@ -400,20 +395,30 @@ a {
 .testimonial-card .quote {
   font-style: italic;
   font-weight: 400;
-  font-size: 18px;
-  margin-bottom: 10px;
-  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.testimonial-card img {
+  width: 20%;
+  margin-left: 20px;
+  margin-right: 30px;
+}
+
+.testimonial-card .author-info {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
 }
 
 .testimonial-card .author {
-  text-align: center;
   font-size: 24px;
-  margin-bottom: 30px;
 }
 
 .testimonial-card .author .company-name {
   transition: all 0.3s ease;
   font-weight: 600;
+  font-size: 16px;
 }
 
 .testimonial-card .author .company-name:hover {
@@ -433,10 +438,6 @@ a {
 
   .slick-dots li {
     margin: 0 22px;
-  }
-
-  .testimonial-card {
-    width: 100%;
   }
 }
 

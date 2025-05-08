@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $(document).ready(function () {
     $(".testimonials-carousel").slick({
       slidesToShow: 3,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 4000,
       pauseOnHover: true,
       dots: true,
